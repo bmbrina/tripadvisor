@@ -8,7 +8,7 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  devServer: { static: path.join(__dirname, "src") },
+  devServer: { historyApiFallback: true },
   module: {
     rules: [
         {
