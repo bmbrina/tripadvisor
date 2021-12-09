@@ -1,0 +1,26 @@
+/* Utility classes */
+.container {
+	@include breakpoint-tablet {
+		width: 700px;
+	}
+
+	@include breakpoint-laptop {
+		width: 900px;
+	}
+
+	@include breakpoint-desktop {
+		width: 1170px;
+	}
+
+	margin: 0 auto;
+	width: 95%;
+}
+
+.visually-hidden {
+	height: 1px;
+	left: -10000px;
+	overflow: hidden;
+	position: absolute;
+	top: auto;
+	width: 1px;
+}

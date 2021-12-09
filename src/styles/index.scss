@@ -1,0 +1,16 @@
+/* Base styles */
+@import 'base/reset';
+@import 'base/mixins';
+@import 'base/utils';
+@import 'base/theme';
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	color: $color-white;
+	font-family: $font-primary;
+	font-size: 16px;
+	font-style: normal;
+}
