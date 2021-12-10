@@ -1,0 +1,96 @@
+.issue {
+	min-height: 100vh;
+
+	&--fetching {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+
+		.issue__container {
+			margin: 0;
+			width: 0;
+		}
+	}
+
+	&__container {
+		margin: 20px auto;
+		width: 90%;
+	}
+
+	&__link {
+		color: darken($color-light-gray, 50%);
+		display: inline-block;
+		font-size: 14px;
+		margin-bottom: 15px;
+		text-transform: uppercase;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: bold;
+		margin-bottom: 15px;
+	}
+
+	&__subtitle {
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 30px;
+	}
+
+	&__text {
+		margin-bottom: 10px;
+
+		span {
+			color: $color-black;
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+	}
+
+	&__divider {
+		background-color: darken($color-light-gray, 30%);
+		border: 0;
+		height: 1px;
+		margin: 20px 0;
+	}
+
+	&__content {
+		border: 2px solid $color-light-gray;
+		border-radius: 4px;
+		padding: 20px;
+	}
+
+	&__comments {
+		margin-top: 30px;
+	}
+
+	&__state {
+		text-transform: capitalize;
+
+		&--open {
+			color: $color-green;
+		}
+
+		&--closed {
+			color: $color-red;
+		}
+	}
+
+	@include breakpoint-tablet {
+		&__container {
+			width: 75%;
+		}
+
+		&__title {
+			font-size: 32px;
+		}
+
+		&__subtitle {
+			font-size: 28px;
+		}
+	}
+}

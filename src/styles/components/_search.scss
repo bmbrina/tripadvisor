@@ -7,6 +7,7 @@
 	&__container {
 		align-items: flex-end;
 		display: flex;
+		margin-bottom: 8px;
 	}
 
 	&__input {
@@ -17,20 +18,24 @@
 		font-size: 16px;
 		height: 45px;
 		margin: 0;
-		min-width: 350px;
 		padding: 10px;
 		transition: border-color .15s ease-in-out;
+		width: 100%;
 
 		&:active,
 		&:focus {
 			border-color: darken($color-light-gray, 20%);
 			outline: 0;
 		}
+
+		@include breakpoint-tablet {
+			min-width: 350px;
+			width: auto;
+		}
 	}
 
 	&__btn {
 		background-color: $color-light-gray;
-		background-image: url('../../images/icons/search.svg');
 		background-position: center;
 		background-repeat: no-repeat;
 		border-radius: 0 4px 4px 0;
@@ -41,6 +46,33 @@
 		&:focus,
 		&:hover {
 			background-color: darken($color-light-gray, 10%);
+		}
+	}
+
+	&__error-message {
+		color: $color-red;
+		font-size: 14px;
+	}
+
+	&--error {
+		.search__input {
+			border-color: $color-red;
+
+			&:active,
+			&:focus {
+				border-color: $color-red;
+			}
+		}
+
+		.search__btn {
+			background-color: $color-red;
+			color: $color-white;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: $color-red;
+			}
 		}
 	}
 }

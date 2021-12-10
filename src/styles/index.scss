@@ -16,6 +16,9 @@ body {
 
 /* Components */
 @import 'components/search';
+@import 'components/loader';
+@import 'components/comment-card';
 
 /* Views */
 @import 'views/issues';
+@import 'views/issue';

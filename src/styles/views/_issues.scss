@@ -11,7 +11,15 @@
 	}
 
 	&__content {
+		align-items: center;
+		display: flex;
+		justify-content: center;
 		margin-top: 50px;
+	}
+
+	&__table-container {
+		overflow-x: scroll;
+		width: 100%;
 	}
 
 	&__table {
@@ -22,8 +30,10 @@
 	&__table-header {
 		background-color: darken($color-light-gray, 50%);
 		color: $color-white;
+		font-size: 14px;
 		font-weight: 500;
-		padding: 20px 0;
+		padding: 20px;
+		text-transform: uppercase;
 	}
 
 	&__table-body {
@@ -39,7 +49,7 @@
 	}
 
 	&__table-data {
-		padding: 20px 0;
+		padding: 20px;
 	}
 
 	tr {

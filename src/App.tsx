@@ -11,7 +11,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate replace to="/issues" />} />
           <Route path="issues" element={<Issues />} />
-          <Route path="issue/:id" element={<Issue />} />
+          <Route path="issue/:owner/:repo/:id" element={<Issue />} />
         </Routes>
       </BrowserRouter>
     </div>

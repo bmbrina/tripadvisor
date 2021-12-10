@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 interface SearchProps {
   value: string
@@ -7,14 +7,23 @@ interface SearchProps {
 }
 
 const Search = ({ value, handleInput, handleSearch }: SearchProps) => {
+  const [hasError, setErrorState] = useState(false)
   const $input = useRef<HTMLInputElement>(null)
   const onInput = () => {
     if ($input.current) {
+      setErrorState(false)
       handleInput($input.current.value)
     }
   }
+  const handleClick = () => {
+    if ($input.current?.value !== '') {
+      handleSearch()
+    } else {
+      setErrorState(true)
+    }
+  }
   return (
-    <div className="search">
+    <div className={`search ${hasError && 'search--error'}`}>
       <label htmlFor="search" className="search__label">Repository url:</label>
       <div className="search__container">
         <input
@@ -26,8 +35,9 @@ const Search = ({ value, handleInput, handleSearch }: SearchProps) => {
           onInput={onInput}
           ref={$input}
         />
-        <button className="search__btn" onClick={handleSearch}>Search</button>
+        <button className="search__btn" onClick={handleClick}>Search</button>
       </div>
+      {hasError && <p className="search__error-message">Please enter a valid repository url</p>}
     </div>
   )
 }
