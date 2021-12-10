@@ -1,7 +1,6 @@
 /* Base styles */
 @import 'base/reset';
 @import 'base/mixins';
-@import 'base/utils';
 @import 'base/theme';
 
 html {
@@ -14,3 +13,9 @@ body {
 	font-size: 16px;
 	font-style: normal;
 }
+
+/* Components */
+@import 'components/search';
+
+/* Views */
+@import 'views/issues';
