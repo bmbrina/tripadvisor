@@ -10,9 +10,8 @@ const App = () => {
       <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<Navigate replace to="/issues" />} />
-          <Route path="issues" element={<Issues />}>
-            <Route path=":id" element={<Issue />} />
-          </Route>
+          <Route path="issues" element={<Issues />} />
+          <Route path="issue/:id" element={<Issue />} />
         </Routes>
       </BrowserRouter>
     </div>

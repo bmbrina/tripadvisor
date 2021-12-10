@@ -35,7 +35,7 @@ const Issues = () => {
     fetchIssues(query, true)
   }
   const goToIssue = (id: number) => {
-    navigate(`/issues/${id}`)
+    navigate(`/issue/${id}`)
   }
 
   useEffect(() => {
