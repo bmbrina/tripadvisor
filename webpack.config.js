@@ -1,9 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const bundlePath = process.env.NODE_ENV ? "/tripadvisor/" : "/"
+
 module.exports = {
   entry: "./src/index.tsx",
-  output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
+  output: {
+    path: path.join(__dirname, "build"),
+    filename: "index.bundle.js",
+    publicPath: bundlePath,
+  },
   mode: process.env.NODE_ENV || "development",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],

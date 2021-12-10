@@ -5,9 +5,10 @@ import Issues from './views/Issues'
 import Issue from './views/Issue'
 
 const App = () => {
+  const { NODE_ENV } = process.env
   return (
     <div className="App">
-      <BrowserRouter basename="/">
+      <BrowserRouter basename={NODE_ENV === 'deployment' ? '/' : '/tripadvisor'}>
         <Routes>
           <Route path="/" element={<Navigate replace to="/issues" />} />
           <Route path="issues" element={<Issues />} />

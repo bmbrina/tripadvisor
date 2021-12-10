@@ -1,12 +1,16 @@
 {
   "name": "tripadvisor",
   "version": "1.0.0",
+  "homepage": "https://bmbrina.github.io/tripadvisor",
   "description": "",
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
     "start": "webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:production": "NODE_ENV=production webpack",
+    "predeploy": "yarn build:production",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +26,7 @@
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.0.1",
     "node-sass": "^7.0.0",
